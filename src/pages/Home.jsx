@@ -3,7 +3,7 @@ export default function Home() {
         <section className="flex min-h-screen">
         {/* Left side */}
         <div className="bg-dark w-1/2 flex flex-col justify-center px-16">
-          <h1 className="text-[7rem] font-serif leading-[1] text-[#E6E4F4]">
+          <h1 className="text-[7rem] font-serif leading-none text-[#E6E4F4]">
             BECK'S <br /> PORTFOLIO
           </h1>
           <p className="mt-10 text-white font-sans text-lg">
