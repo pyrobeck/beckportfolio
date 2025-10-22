@@ -1,23 +1,46 @@
+import spiderlegovid from "../assets/artwork/IMD3002_TPC_B_Braun_I_Legault_Video.mp4";
+
 export default function Home() {
-    return (
-        <section className="flex min-h-screen">
-        {/* Left side */}
-        <div className="bg-dark w-1/2 flex flex-col justify-center px-16">
-          <h1 className="text-[7rem] font-serif leading-none text-[#E6E4F4]">
-            BECK'S <br /> PORTFOLIO
-          </h1>
-          <p className="mt-10 text-white font-sans text-lg">
-            Email: <span className="font-bold">beckbraun@cmail.carleton.ca</span>
-          </p>
-        </div>
-  
-        {/* Right side */}
-        <div className="bg-lightgray w-1/2 flex justify-center items-center">
-          <button className="bg-dark rounded-full p-6 hover:bg-purpleAccent transition">
-            <img src={play} alt="Play" className="w-8" />
-          </button>
-        </div>
+  return (
+    <main className="flex flex-1">
+      {/* Left side */}
+      <section className="w-1/2 bg-black flex flex-col justify-center px-24">
+        <h1 className="text-7xl font-serif leading-tight mb-6">
+          BECK'S<br />PORTFOLIO
+        </h1>
+        <p className="text-lg font-semibold text-purple-100">
+          Email:{" "}
+          <a
+            href="mailto:beckbraun@cmail.carleton.ca"
+            className="underline"
+          >
+            beckbraun@cmail.carleton.ca
+          </a>
+        </p>
+        <br></br>
+        <br></br>
+        <p>I am a dedicated artist and developer. </p>
+        <br></br>
+        <p>Welcome to my art portfolio. </p>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
       </section>
-    );
-  }
-  
+
+      {/* Right side */}
+      <section className="w-1/2 bg-gray-300 flex items-center justify-center">
+        <video
+          src={spiderlegovid}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      </section>
+    </main>
+  );
+}

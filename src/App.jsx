@@ -3,7 +3,8 @@ import Home from "./pages/Home";
 import ArtPortfolio from "./pages/ArtPortfolio";
 import Games from "./pages/Games";
 import Contact from "./pages/Contact";
-import spiderlegovid from "./assets/artwork/IMD3002_TPC_B_Braun_I_Legault_Video.mp4";
+import Footer from "./components/Footer";
+
 
 export default function App() {
   return (
@@ -35,35 +36,7 @@ export default function App() {
           <Route path="/games" element={<Games />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-
-        {/* Split Section */}
-        <main className="flex flex-1">
-          <section className="w-1/2 bg-black flex flex-col justify-center px-24">
-            <h1 className="text-7xl font-serif leading-tight mb-6">
-              BECK'S<br />PORTFOLIO
-            </h1>
-            <p className="text-lg font-semibold text-purple-100">
-              Email:{" "}
-              <a
-                href="mailto:beckbraun@cmail.carleton.ca"
-                className="underline"
-              >
-                beckbraun@cmail.carleton.ca
-              </a>
-            </p>
-          </section>
-
-          <section className="w-1/2 bg-gray-300 flex items-center justify-center">
-            <video
-              src={spiderlegovid}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          </section>
-        </main>
+        <Footer />
       </div>
     </Router>
   );
