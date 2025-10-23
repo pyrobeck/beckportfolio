@@ -44,7 +44,8 @@ export default function Navbar() {
           <li>
             <Link
               to="/contact"
-              className="bg-purple-600 px-5 py-2 rounded-lg text-white font-semibold hover:bg-purple-500 hover:shadow-[0_0_15px_#8b5cf6] transition-all"
+              className="text-white border border-transparent px-5 py-2 rounded-lg font-semibold hover:text-purple-400 hover:border-purple-400 transition-all"
+
             >
               Contact
             </Link>
@@ -53,14 +54,19 @@ export default function Navbar() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden focus:outline-none"
+          className="md:hidden focus:outline-none text-gray-200 hover:text-purple-400 transition"
+          aria-label="Toggle Menu"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {isOpen && (
-        <ul className="md:hidden flex flex-col items-center space-y-6 pb-8 mt-4 text-lg font-medium bg-black/80 border-t border-white/10 backdrop-blur-md">
+      <div
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col items-center space-y-6 pb-8 pt-4 text-lg font-medium bg-black/80 border-t border-white/10 backdrop-blur-md">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
@@ -80,13 +86,13 @@ export default function Navbar() {
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className="bg-purple-600 px-5 py-2 rounded-lg text-white font-semibold hover:bg-purple-500 hover:shadow-[0_0_15px_#8b5cf6] transition-all"
+              className="text-white border border-transparent px-5 py-2 rounded-lg font-semibold hover:text-purple-400 hover:border-purple-400 transition-all"
             >
               Contact
             </Link>
           </li>
         </ul>
-      )}
+      </div>
     </nav>
   );
 }
