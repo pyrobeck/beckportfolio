@@ -1,22 +1,34 @@
+import { motion } from "framer-motion";
 import artvid from "../assets/artwork/BeckBraun_ITEC4007_Assignment1C_video.mp4";
 
 export default function Contact() {
   return (
-    <main className="flex flex-col md:flex-row flex-1">
-      <section className="w-full md:w-1/2 bg-black flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 py-12 text-center md:text-left">
-        <h1 className="font-[Playfair Display] font-bold leading-[0.9] tracking-tight mb-8 
-          text-5xl sm:text-7xl md:text-8xl lg:text-[12rem] xl:text-[16rem] text-white">
+    <main className="relative flex flex-col md:flex-row min-h-screen overflow-hidden bg-black text-white">
+      <section className="relative z-10 w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 py-20">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="font-[Playfair_Display] font-bold leading-[0.9] tracking-tight mb-12
+                     text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[13rem]
+                     bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent"
+        >
           Contact
-        </h1>
+        </motion.h1>
 
-        <div className="space-y-6 mt-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="space-y-8 mt-6"
+        >
           <p className="text-base sm:text-lg font-semibold text-purple-100">
             Instagram:{" "}
             <a
               href="https://www.instagram.com/pyrobeckdraws"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-purple-400 transition-colors"
+              className="underline hover:text-purple-300 transition-colors"
             >
               @pyrobeckdraws
             </a>
@@ -26,23 +38,33 @@ export default function Contact() {
             Email:{" "}
             <a
               href="mailto:beckbraun@cmail.carleton.ca"
-              className="underline hover:text-purple-400 transition-colors"
+              className="underline hover:text-purple-300 transition-colors"
             >
               beckbraun@cmail.carleton.ca
             </a>
           </p>
-        </div>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="mt-12 text-gray-300 text-sm sm:text-base max-w-md"
+        >
+          Let’s connect — whether you’re interested in collaborations, commissions, or just want to chat about creative projects.
+        </motion.p>
       </section>
 
-      <section className="w-full md:w-1/2 bg-gray-300 flex items-center justify-center">
+      <section className="relative w-full md:w-1/2 h-[50vh] md:h-auto">
         <video
           src={artvid}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-64 sm:h-80 md:h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/70 to-transparent" />
       </section>
     </main>
   );

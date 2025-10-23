@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import groupcapstonepic from "../assets/artwork/IMG_4158.jpg";
 import anotherpic from "../assets/artwork/DeckOfSecrets_Logo_White.png";
 import thirdpic from "../assets/artwork/IMG_1138.JPG";
@@ -6,32 +7,75 @@ export default function Games() {
   const images = [groupcapstonepic, anotherpic, thirdpic];
 
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col items-center py-20">
-      <h1 className="font-[Playfair Display] font-bold text-center leading-tight mb-12 text-[5rem] sm:text-[7rem] md:text-[10rem]">
+    <main className="min-h-screen bg-black text-white flex flex-col items-center py-24 overflow-hidden">
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="font-[Playfair_Display] font-bold text-center leading-[0.9] mb-16
+                   text-[4rem] sm:text-[6rem] md:text-[8rem]
+                   bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent"
+      >
         Games
-      </h1>
+      </motion.h1>
 
-      <section className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8">
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.1 }}
+        className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8"
+      >
         {images.map((src, i) => (
-          <div key={i} className="flex justify-center">
+          <motion.div
+            key={i}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6 }}
+            className="relative group overflow-hidden rounded-xl shadow-lg"
+          >
             <img
               src={src}
-              alt={`art-${i}`}
-              className="rounded-lg shadow-lg object-cover w-full h-[350px]"
+              alt={`game-${i}`}
+              className="w-full h-[350px] object-cover transform transition-transform duration-300 group-hover:scale-105"
             />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </motion.div>
         ))}
-      </section>
+      </motion.section>
 
-      <p className="text-purple-200 text-center mt-16 text-lg">
-        You can check out the capstone VR project I worked on here:
-      </p>
-      <a href="https://codenoirstudios.wixsite.com/deckofsecrets/" className="underline">https://codenoirstudios.wixsite.com/deckofsecrets/</a>
-      <br></br> <br></br>
-      <p className="text-purple-200 text-center mt-16 text-lg">
-        More games I worked on:
-      </p>
-      <a href="https://pyrobeck.itch.io/" className="underline">itch.io</a>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="text-center mt-20 space-y-6"
+      >
+        <p className="text-purple-200 text-lg max-w-xl mx-auto">
+          You can check out the capstone VR project I worked on here:
+        </p>
+        <a
+          href="https://codenoirstudios.wixsite.com/deckofsecrets/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-purple-400 hover:text-purple-300 transition-colors"
+        >
+          https://codenoirstudios.wixsite.com/deckofsecrets/
+        </a>
+
+        <div className="mt-12">
+          <p className="text-purple-200 text-lg">More games I worked on:</p>
+          <a
+            href="https://pyrobeck.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-purple-400 hover:text-purple-300 transition-colors"
+          >
+            itch.io
+          </a>
+        </div>
+      </motion.div>
     </main>
   );
 }

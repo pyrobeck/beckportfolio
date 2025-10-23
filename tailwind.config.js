@@ -6,22 +6,18 @@ export default {
       "./src/**/*.{js,jsx,ts,tsx}",
     ],
     theme: {
-      colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        black: '#000000',
-        white: '#ffffff',
-        dark: '#0a0814',
-        lightgray: '#C6C5D0',
-        purpleAccent: '#5E32A8',
-        purpleText: '#A388F1',
+      extend: {
+        colors: {
+          accent: '#8b5cf6', // Purple neon accent
+          dark: '#0a0a0a',
+          light: '#f5f5f5',
+        },
+        fontFamily: {
+          sans: ['"Inter var"', 'sans-serif'],
+          display: ['"Space Grotesk"', 'sans-serif'],
+        },
       },
-      fontFamily: {
-        serif: ['"Playfair Display"', 'serif'],
-        sans: ['Poppins', 'sans-serif'],
-      },
-      extend: {},
-    },
+    },    
     corePlugins: {
       preflight: true,
     },
