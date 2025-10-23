@@ -19,7 +19,6 @@ export default function App() {
     />
   </Link>
 
-  {/* Nav Links */}
   <div className="flex items-center space-x-6 sm:space-x-10 text-base sm:text-lg font-medium">
     <Link to="/" className="text-purple-200 hover:text-purple-400 transition-colors">
       Home
