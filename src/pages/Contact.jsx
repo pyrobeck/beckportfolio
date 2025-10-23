@@ -5,7 +5,6 @@ export default function Contact() {
     <main className="flex flex-1">
       <section className="w-1/2 bg-black flex flex-col justify-center px-24">
         <h1 className="font-[Playfair Display] font-bold leading-[0.85] tracking-tight mb-12 text-[8rem] sm:text-[10rem] md:text-[12rem] lg:text-[20rem] xl:text-[20rem]">
-        <br></br>    <br></br>      <br></br>
             Contact
         </h1>
         <br></br>
