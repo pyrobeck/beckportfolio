@@ -10,33 +10,37 @@ export default function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-black text-white">
-      <nav className="flex justify-between items-center px-12 py-6 text-lg font-sans">
-  <Link to="/" className="flex items-center">
+      <nav className="flex items-center justify-between px-6 sm:px-12 py-4 md:py-6 bg-black text-white font-sans">
+  <Link to="/" className="flex items-center flex-shrink-0">
     <img
       src={spiderlogo}
       alt="Beck's Logo"
-      className="h-50 w-50 md:h-30 md:w-30 hover:scale-105 transition-transform"
+      className="h-20 sm:h-24 md:h-30 w-auto object-contain hover:scale-120 transition-transform duration-200"
     />
   </Link>
 
-  <div className="flex items-center space-x-8">
-    <Link to="/" className="hover:text-purple-400 transition-colors">
+  {/* Nav Links */}
+  <div className="flex items-center space-x-6 sm:space-x-10 text-base sm:text-lg font-medium">
+    <Link to="/" className="text-purple-200 hover:text-purple-400 transition-colors">
       Home
     </Link>
-    <Link to="/art" className="hover:text-purple-400 transition-colors">
+    <Link to="/art" className="text-purple-200 hover:text-purple-400 transition-colors">
       Art Portfolio
     </Link>
-    <Link to="/games" className="hover:text-purple-400 transition-colors">
+    <Link to="/games" className="text-purple-200 hover:text-purple-400 transition-colors">
       Games
     </Link>
     <Link
       to="/contact"
-      className="bg-purple-700 px-4 py-2 rounded text-white hover:bg-purple-600 transition-colors"
+      className="bg-purple-700 px-5 py-2 rounded-lg text-white font-semibold hover:bg-purple-600 transition-colors shadow-md hover:shadow-purple-700/40"
     >
       Contact
     </Link>
   </div>
 </nav>
+
+
+
 
 
         <div className="flex-1">
