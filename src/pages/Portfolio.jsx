@@ -8,7 +8,7 @@ import fourthpic from "../assets/artwork/istheretime.png";
 import fifthpic from "../assets/artwork/kitchenorange.0004.png";
 import sixthpic from "../assets/artwork/playbillcovermeangirls_final.png";
 
-export default function ArtPortfolio() {
+export default function Portfolio() {
   const images = [firstpic, anotherpic, thirdpic, fourthpic, fifthpic, sixthpic];
   const [selectedIndex, setSelectedIndex] = useState(null);
 

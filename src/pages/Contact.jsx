@@ -51,7 +51,7 @@ export default function Contact() {
           transition={{ delay: 1 }}
           className="mt-12 text-gray-300 text-sm sm:text-base max-w-md"
         >
-          Let’s connect — whether you’re interested in collaborations, commissions, or just want to chat about creative projects.
+          Please feel free to reach out!
         </motion.p>
       </section>
 

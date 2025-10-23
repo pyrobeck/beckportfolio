@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import ArtPortfolio from "./pages/ArtPortfolio";
+import Portfolio from "./pages/Portfolio";
 import Games from "./pages/Games";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
@@ -24,8 +24,8 @@ export default function App() {
     <Link to="/" className="text-purple-200 hover:text-purple-400 transition-colors">
       Home
     </Link>
-    <Link to="/art" className="text-purple-200 hover:text-purple-400 transition-colors">
-      Art Portfolio
+    <Link to="/portfolio" className="text-purple-200 hover:text-purple-400 transition-colors">
+      Portfolio
     </Link>
     <Link to="/games" className="text-purple-200 hover:text-purple-400 transition-colors">
       Games
@@ -46,7 +46,7 @@ export default function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/art" element={<ArtPortfolio />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/games" element={<Games />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
