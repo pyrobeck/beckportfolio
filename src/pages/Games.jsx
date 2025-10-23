@@ -1,7 +1,6 @@
 import groupcapstonepic from "../assets/artwork/IMG_4158.jpg";
 import anotherpic from "../assets/artwork/DeckOfSecrets_Logo_White.png";
 import thirdpic from "../assets/artwork/IMG_1138.JPG";
-// 👉 Add more photos as needed
 
 export default function Games() {
   const images = [groupcapstonepic, anotherpic, thirdpic];
